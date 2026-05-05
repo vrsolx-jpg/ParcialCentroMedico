@@ -39,3 +39,9 @@ select * from consultas;
 UPDATE consultas
 SET nombre_paciente = 'Diego Perez'
 WHERE nombre_paciente = 'Diego Carvajal';
+
+
+
+---------------------------------------------------------------------------------------------
+SWAGGER:
+http://localhost:8080/swagger-ui/index.html
