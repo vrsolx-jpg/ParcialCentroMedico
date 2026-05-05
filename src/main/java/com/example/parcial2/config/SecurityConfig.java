@@ -51,19 +51,19 @@ public class SecurityConfig {
                 .build();
 
         UserDetails diego = User.withDefaultPasswordEncoder()
-                .username("PAC-101")
+                .username("diego101")
                 .password("diego101")
                 .roles("PACIENTE")
                 .build();
 
         UserDetails marta = User.withDefaultPasswordEncoder()
-                .username("PAC-102")
+                .username("marta102")
                 .password("marta102")
                 .roles("PACIENTE")
                 .build();
 
         UserDetails juan = User.withDefaultPasswordEncoder()
-                .username("PAC-103")
+                .username("juan103")
                 .password("juan103")
                 .roles("PACIENTE")
                 .build();
