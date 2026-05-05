@@ -34,3 +34,8 @@ INSERT INTO consultas (nombre_paciente, motivo_consulta, numero_consultorio, hor
 
 
 select * from consultas;
+
+
+UPDATE consultas
+SET nombre_paciente = 'Diego Perez'
+WHERE nombre_paciente = 'Diego Carvajal';
