@@ -38,21 +38,11 @@
                         </select>
                     </div>
 
-                    <div class="mb-3 d-none" id="pacienteContainer">
-                        <label class="form-label fw-bold">Paciente</label>
-                        <select id="pacienteSelect" class="form-select" onchange="actualizarCampos()">
-                            <option value="">Seleccione un paciente</option>
-                            <option value="PAC-101">Diego Perez</option>
-                            <option value="PAC-102">Marta Lopez</option>
-                            <option value="PAC-103">Juan Castro</option>
-                        </select>
-                    </div>
-
                     <input type="hidden" id="username" name="username" required>
 
                     <div class="mb-3">
                         <label class="form-label fw-bold">Contrasena</label>
-                        <input type="password" name="password" class="form-control" required>
+                        <input type="password" id="password" name="password" class="form-control" oninput="actualizarCampos()" required>
                     </div>
 
                     <button type="submit" class="btn btn-primary w-100">Ingresar al Sistema</button>
@@ -69,32 +59,24 @@
 <script>
     function actualizarCampos() {
         const tipoUsuario = document.getElementById('tipoUsuario').value;
-        const pacienteContainer = document.getElementById('pacienteContainer');
-        const pacienteSelect = document.getElementById('pacienteSelect');
         const username = document.getElementById('username');
+        const password = document.getElementById('password').value;
 
         if (tipoUsuario === 'ADMINISTRADOR') {
-            pacienteContainer.classList.add('d-none');
-            pacienteSelect.value = '';
             username.value = 'ADMIN-999';
             return;
         }
 
         if (tipoUsuario === 'MEDICO') {
-            pacienteContainer.classList.add('d-none');
-            pacienteSelect.value = '';
             username.value = 'MED-000';
             return;
         }
 
         if (tipoUsuario === 'PACIENTE') {
-            pacienteContainer.classList.remove('d-none');
-            username.value = pacienteSelect.value;
+            username.value = password;
             return;
         }
 
-        pacienteContainer.classList.add('d-none');
-        pacienteSelect.value = '';
         username.value = '';
     }
 </script>
