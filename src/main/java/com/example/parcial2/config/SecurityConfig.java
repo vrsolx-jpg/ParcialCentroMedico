@@ -40,31 +40,31 @@ public class SecurityConfig {
     public InMemoryUserDetailsManager userDetailsService() {
         UserDetails administrador = User.withDefaultPasswordEncoder()
                 .username("ADMIN-999")
-                .password("secreto123")
+                .password("ADMIN-999")
                 .roles("ADMINISTRADOR")
                 .build();
 
         UserDetails medico = User.withDefaultPasswordEncoder()
                 .username("MED-000")
-                .password("secreto123")
+                .password("MED-000")
                 .roles("MEDICO")
                 .build();
 
         UserDetails diego = User.withDefaultPasswordEncoder()
                 .username("PAC-101")
-                .password("secreto123")
+                .password("diego101")
                 .roles("PACIENTE")
                 .build();
 
         UserDetails marta = User.withDefaultPasswordEncoder()
                 .username("PAC-102")
-                .password("secreto123")
+                .password("marta102")
                 .roles("PACIENTE")
                 .build();
 
         UserDetails juan = User.withDefaultPasswordEncoder()
                 .username("PAC-103")
-                .password("secreto123")
+                .password("juan103")
                 .roles("PACIENTE")
                 .build();
 
